@@ -1,0 +1,30 @@
+# k6-observability-learning
+
+My learning repo for performance testing with k6, monitored with Prometheus, Grafana, OpenTelemetry and Dynatrace (22 Nov 2026 to 5 Feb 2027).
+Every topic has its own folder with runnable k6 scripts, any Docker/config files, and a short README with results and what I learned.
+
+> I only load-test applications I run myself (for example QuickPizza in Docker), never public websites.
+
+## Prerequisites
+
+- [k6](https://grafana.com/docs/k6/latest/set-up/install-k6/) installed (`k6 version` to check)
+- Docker Desktop (to run the demo app, Prometheus and Grafana)
+
+## How to run
+
+1. Start the demo app: `docker run --rm -p 3333:3333 ghcr.io/grafana/quickpizza-local:latest`
+2. Copy `.env.example` to `.env` and fill in values.
+3. Run any lesson's script by giving its folder name, for example:
+   `k6 run 01-first-script/script.ts`
+4. From the Prometheus lesson onwards, send metrics to Prometheus:
+   `k6 run -o experimental-prometheus-rw 01-first-script/script.ts`
+
+## Topics
+
+| Week | Topic | Folder |
+| --- | --- | --- |
+| 1 | Performance concepts, first k6 script, VUs, checks | coming soon |
+
+## What I learned
+
+Updated as I go.
